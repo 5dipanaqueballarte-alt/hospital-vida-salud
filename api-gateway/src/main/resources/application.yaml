@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: paciente-service
+          uri: lb://paciente-service
+          predicates:
+            - Path=/api/pacientes/**
+        - id: cita-service
+          uri: lb://cita-service
+          predicates:
+            - Path=/api/citas/**
+        - id: auditoria-service
+          uri: lb://auditoria-service
+          predicates:
+            - Path=/api/auditoria/**
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS auditoria (
+    id BIGSERIAL PRIMARY KEY,
+    recurso VARCHAR(30) NOT NULL,
+    recurso_id BIGINT NOT NULL,
+    estado_nuevo VARCHAR(20) NOT NULL,
+    evento VARCHAR(50) NOT NULL,
+    origen VARCHAR(50) NOT NULL,
+    fecha TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    );

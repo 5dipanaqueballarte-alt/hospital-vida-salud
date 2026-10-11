@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS notificaciones (
+    id BIGSERIAL PRIMARY KEY,
+    cita_id BIGINT NOT NULL,
+    paciente_id BIGINT NOT NULL,
+    tipo VARCHAR(30) NOT NULL,
+    mensaje VARCHAR(300) NOT NULL,
+    fecha_envio TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    );
